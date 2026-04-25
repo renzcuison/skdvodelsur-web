@@ -1,10 +1,52 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #081740;
+  --color-accent: #DAA520; /* Gold accent for government feel */
+
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
 :root {
-  --primary: #021B6A;
+  --primary: #081740;
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-family: var(--font-sans);
+
   @apply bg-slate-50 text-slate-900 antialiased;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-feature-settings: "cv11", "ss01", "ss03";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #081740;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #081740;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0a1e5a;
 }

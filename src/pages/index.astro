@@ -1,17 +1,35 @@
 ---
-
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="SK Davao del Sur | Home">
+    <Header />
+    <main class="-mt-20">
+        <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+            <img
+                src="/hero-bg.jpg"
+                alt="Davao Del Sur Culture"
+                class="absolute inset-0 w-full h-full object-cover -z-10"
+            />
+            <div class="absolute inset-0 bg-black/50 -z-10"></div>
+
+            <div class="text-center">
+                <h1 class="text-white text-5xl md:text-7xl font-bold drop-shadow-2xl">
+                    Sangguniang Kabataan
+                </h1>
+                <p class="text-white/90 text-lg md:text-xl font-medium tracking-[0.3em] uppercase mt-4">
+                    Provincial Federation of Davao del Sur
+                </p>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-primary">Welcome to the Official Portal</h2>
+            <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-3xl">
+                This is the official landing page for SK Davao del Sur. We are building a space for youth empowerment,
+                administrative transparency, and cultural preservation.
+            </p>
+        </section>
+    </main>
+</Layout>	
