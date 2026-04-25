@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+:root {
+  --primary: #021B6A;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
