@@ -2,6 +2,7 @@
 import Layout from "../layouts/layout.astro";
 import Header from "../components/header.astro";
 import Hero from "../components/hero.astro";
+import News from "../components/news.astro";
 ---
 
 <Layout title="SK Davao del Sur | Home">
@@ -9,15 +10,6 @@ import Hero from "../components/hero.astro";
 	<main>
 		<Hero />
 
-		<section class="py-24 px-6 max-w-7xl mx-auto">
-			<h2 class="text-4xl font-bold text-[#081740]">
-				Welcome to the Official Portal
-			</h2>
-			<p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-3xl">
-				This is the official landing page for SK Davao del Sur. We are
-				building a space for youth empowerment, administrative
-				transparency, and cultural preservation.
-			</p>
-		</section>
+		<News />
 	</main>
 </Layout>

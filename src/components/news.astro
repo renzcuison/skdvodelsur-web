@@ -1,0 +1,118 @@
+---
+const featuredItems = [
+    {
+        title: "OUR SUPPORT NEVER WAVERS",
+        subtitle: "Athletic Association Delegates",
+        img: "/img/feat-1.png",
+    },
+    {
+        title: "LITERACY SPARKS HOPE",
+        subtitle: "Project Basa Lingaw",
+        img: "/img/feat-2.png",
+    },
+    {
+        title: "CONGRATULATIONS",
+        subtitle: "Significant Milestone reached",
+        img: "/img/feat-4.png",
+    },
+    {
+        title: "TREE GROWING ACTIVITY",
+        subtitle: "Recap from Feb 24",
+        img: "/img/feat-3.png",
+    },
+];
+---
+
+<section class="w-full px-8 py-12 flex flex-col lg:flex-row gap-6">
+    <div class="lg:w-3/4">
+        <div class="bg-[#081740] text-white px-4 py-2 rounded-t-md mb-4">
+            <h2 class="text-xl font-bold tracking-widest uppercase">
+                Featured
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {
+                featuredItems.map((item) => (
+                    <div class="bg-slate-50 rounded-lg overflow-hidden border border-slate-200 flex flex-col h-[400px]">
+                        <div class="p-4 bg-[#081740] text-white flex-grow-0">
+                            <h3 class="text-xs font-bold leading-tight uppercase italic">
+                                {item.title}
+                            </h3>
+                            <p class="text-[10px] opacity-80 mt-1 line-clamp-2">
+                                {item.subtitle}
+                            </p>
+                        </div>
+                        <div class="flex-grow bg-slate-200 relative">
+                            {item.img ? (
+                                <img
+                                    src={item.img}
+                                    alt={item.title}
+                                    class="w-full h-full object-cover"
+                                />
+                            ) : (
+                                <div class="w-full h-full bg-[#081740] flex items-center justify-center p-6 text-center">
+                                    <span class="text-white/20 text-4xl font-bold italic">
+                                        SK
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+
+    <div class="lg:w-1/4">
+        <div
+            class="bg-[#081740] text-white px-4 py-2 rounded-t-md mb-4 text-center"
+        >
+            <h2 class="text-xl font-bold tracking-widest uppercase">
+                Announcement
+            </h2>
+        </div>
+
+        <div
+            class="bg-white border border-slate-200 rounded-lg p-6 h-[400px] overflow-y-auto scrollbar-thin"
+        >
+            <article class="prose prose-slate prose-sm">
+                <h3 class="text-sm font-bold uppercase leading-snug">
+                    Youth for Peace | SKPF OF DAVAO DEL SUR PARTICIPATED IN THE
+                    INTERNATIONAL DAY OF PEACE 2024
+                </h3>
+                <p class="text-[11px] text-slate-500 mt-2">
+                    September 21, 2024
+                </p>
+                <div
+                    class="mt-4 text-xs leading-relaxed text-slate-700 space-y-3"
+                >
+                    <p>
+                        The Sangguniang Kabataan Provincial Federation of Davao
+                        del Sur, under the leadership of
+                        <strong
+                            >SKPF President, Hon. Board Member Justin Siao</strong
+                        >, participated in the event...
+                    </p>
+                    <p>
+                        This participation was made possible with the support of
+                        our Governor, <strong>Hon. Yvonne Roña Cagas</strong>...
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<style>
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 4px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: #081740;
+        border-radius: 10px;
+    }
+</style>
