@@ -17,8 +17,8 @@ const rightNav = [
 <header
   class="w-full bg-[#081740] text-white shadow-md font-sans sticky top-0 z-[100]"
 >
-  <div class="w-full px-8 h-20 flex items-center justify-between relative">
-    <nav class="hidden lg:flex items-center justify-between flex-1 pr-40">
+  <div class="w-full px-16 h-20 flex items-center justify-between relative">
+    <nav class="hidden lg:flex items-center justify-between flex-1 pr-60">
       {
         leftNav.map((item) => (
           <a
@@ -49,45 +49,43 @@ const rightNav = [
       </a>
     </div>
 
-    <nav class="hidden lg:flex items-center flex-1 pl-40">
-      <div class="flex items-center justify-between w-full">
-        {
-          rightNav.map((item) => (
-            <a
-              href={item.href}
-              class:list={[
-                "text-[13px] tracking-[0.15em] transition-all duration-200 hover:text-white/80 whitespace-nowrap",
-                currentPath === item.href ? "font-bold" : "font-normal",
-              ]}
-            >
-              {item.name}
-            </a>
-          ))
-        }
+    <nav class="hidden lg:flex items-center justify-between flex-1 pl-60">
+      {
+        rightNav.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "text-[13px] tracking-[0.15em] transition-all duration-200 hover:text-white/80 whitespace-nowrap",
+              currentPath === item.href ? "font-bold" : "font-normal",
+            ]}
+          >
+            {item.name}
+          </a>
+        ))
+      }
 
-        <button
-          class="flex items-center gap-2 hover:opacity-70 transition-opacity ml-8 group"
+      <button
+        class="flex items-center gap-2 hover:opacity-70 transition-opacity group"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="group-hover:scale-110 transition-transform"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="group-hover:scale-110 transition-transform"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <span class="text-[13px] font-normal tracking-[0.15em] uppercase"
-            >Search</span
-          >
-        </button>
-      </div>
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span class="text-[13px] font-normal tracking-[0.15em] uppercase"
+          >Search</span
+        >
+      </button>
     </nav>
   </div>
 </header>
