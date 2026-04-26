@@ -1,0 +1,29 @@
+---
+import NavLinks from './navlinks.astro';
+const { allNav, currentPath } = Astro.props;
+---
+<div id="mobile-menu" class="hidden fixed inset-0 bg-[#081740] z-[115] flex-col items-center justify-center">
+    <nav class="flex flex-col items-center gap-10">
+        <NavLinks
+            links={allNav}
+            currentPath={currentPath}
+            styleClass="text-xl tracking-[0.2em] uppercase text-white"
+        />
+    </nav>
+</div>
+
+<script>
+    const trigger = document.getElementById('menu-trigger');
+    const menu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    trigger?.addEventListener('click', () => {
+        const isHidden = menu?.classList.contains('hidden');
+        menu?.classList.toggle('hidden');
+        menu?.classList.toggle('flex');
+        hamburgerIcon?.classList.toggle('hidden');
+        closeIcon?.classList.toggle('hidden');
+        document.body.style.overflow = isHidden ? 'hidden' : '';
+    });
+</script>

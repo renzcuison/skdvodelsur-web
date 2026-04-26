@@ -1,0 +1,28 @@
+---
+interface NavLink {
+  name: string;
+  href: string;
+}
+
+interface Props {
+  links: NavLink[];
+  currentPath: string;
+  styleClass: string;
+}
+
+const { links, currentPath, styleClass } = Astro.props;
+---
+
+{
+  links.map((item) => (
+    <a
+      href={item.href}
+      class:list={[
+        styleClass,
+        currentPath === item.href ? "font-bold" : "font-normal",
+      ]}
+    >
+      {item.name}
+    </a>
+  ))
+}
