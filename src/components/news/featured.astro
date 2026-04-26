@@ -4,26 +4,31 @@ const featuredItems = [
         title: "OUR SUPPORT NEVER WAVERS",
         subtitle: "Athletic Association Delegates",
         img: "/img/feat-1.png",
+        url: "https://www.facebook.com/SKFederationOfDavaoDelSur/posts/pfbid02GV2VezHzpd4ZL4s4KoLF6x1yYcmHE672TiNcStBwesEx9GGawFLpCLtqXKvbEfiyl",
     },
     {
         title: "LITERACY SPARKS HOPE",
         subtitle: "Project Basa Lingaw",
         img: "/img/feat-2.png",
+        url: "https://www.facebook.com/SKFederationOfDavaoDelSur/posts/pfbid02GV2VezHzpd4ZL4s4KoLF6x1yYcmHE672TiNcStBwesEx9GGawFLpCLtqXKvbEfiyl",
     },
     {
         title: "CONGRATULATIONS",
         subtitle: "Significant Milestone reached",
         img: "/img/feat-4.png",
+        url: "https://www.facebook.com/SKFederationOfDavaoDelSur/posts/pfbid02GV2VezHzpd4ZL4s4KoLF6x1yYcmHE672TiNcStBwesEx9GGawFLpCLtqXKvbEfiyl",
     },
     {
         title: "TREE GROWING ACTIVITY",
         subtitle: "Recap from Feb 24",
         img: "/img/feat-3.png",
+        url: "https://www.facebook.com/SKFederationOfDavaoDelSur/posts/pfbid02GV2VezHzpd4ZL4s4KoLF6x1yYcmHE672TiNcStBwesEx9GGawFLpCLtqXKvbEfiyl",
     },
     {
         title: "DAVAO DEL SUR SUMMIT",
         subtitle: "Youth Leadership 2024",
         img: "/img/feat-1.png",
+        url: "https://www.facebook.com/SKFederationOfDavaoDelSur/posts/pfbid02GV2VezHzpd4ZL4s4KoLF6x1yYcmHE672TiNcStBwesEx9GGawFLpCLtqXKvbEfiyl",
     },
 ];
 ---
@@ -33,23 +38,42 @@ const featuredItems = [
         <h2 class="text-xl font-bold tracking-widest uppercase">Featured</h2>
     </div>
 
-    <div class="flex gap-4 overflow-x-auto pb-4 scrollbar-minimal scroll-smooth">
-        {featuredItems.map((item) => (
-            <div class="bg-slate-50 rounded-lg overflow-hidden border border-slate-200 flex flex-col h-[400px] min-w-[320px] flex-shrink-0">
-                <div class="p-4 bg-[#081740] text-white flex-grow-0">
-                    <h3 class="text-xs font-bold leading-tight uppercase italic">{item.title}</h3>
-                    <p class="text-[10px] opacity-80 mt-1 line-clamp-2">{item.subtitle}</p>
-                </div>
-                <div class="flex-grow bg-slate-200 relative">
-                    {item.img ? (
-                        <img src={item.img} alt={item.title} class="w-full h-full object-cover" />
-                    ) : (
-                        <div class="w-full h-full bg-[#081740] flex items-center justify-center p-6 text-center">
-                            <span class="text-white/20 text-4xl font-bold italic">SK</span>
-                        </div>
-                    )}
-                </div>
-            </div>
-        ))}
+    <div
+        class="flex gap-4 overflow-x-auto pb-4 scrollbar-minimal scroll-smooth"
+    >
+        {
+            featuredItems.map((item) => (
+                <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-slate-50 rounded-lg overflow-hidden border border-slate-200 flex flex-col h-[400px] min-w-[320px] flex-shrink-0"
+                >
+                    <div class="p-4 bg-[#081740] text-white flex-grow-0">
+                        <h3 class="text-xs font-bold leading-tight uppercase italic">
+                            {item.title}
+                        </h3>
+                        <p class="text-[10px] opacity-80 mt-1 line-clamp-2">
+                            {item.subtitle}
+                        </p>
+                    </div>
+                    <div class="flex-grow bg-slate-200 relative">
+                        {item.img ? (
+                            <img
+                                src={item.img}
+                                alt={item.title}
+                                class="w-full h-full object-cover"
+                            />
+                        ) : (
+                            <div class="w-full h-full bg-[#081740] flex items-center justify-center p-6 text-center">
+                                <span class="text-white/20 text-4xl font-bold italic">
+                                    SK
+                                </span>
+                            </div>
+                        )}
+                    </div>
+                </a>
+            ))
+        }
     </div>
 </div>
